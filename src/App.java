@@ -14,7 +14,7 @@ public class App {
         String guesLetter;   // input char that gues letter
         
         char [] buffer = words.get(indexBuf).toCharArray(); // word with whose you work
-        int count = 0;
+        int mistakeCount = 0;
 
         for(int i = 0; i <words.get(indexBuf).length();i++ ){
             //define buffer word like "_______"
@@ -24,7 +24,7 @@ public class App {
         char [] wordBuf = words.get(indexBuf).toCharArray(); // the word to be compared with
         Scanner in = new Scanner(System.in);
 
-        while (buffer != words.get(indexBuf).toCharArray() || count != 5){
+        while (buffer != words.get(indexBuf).toCharArray() || mistakeCount != 5){
             guesLetter = in.next();
             char[] chGuesLetter = guesLetter.toCharArray(); //convert letter from string to char
 
@@ -33,7 +33,7 @@ public class App {
                     buffer[i] = chGuesLetter[0];        
                 }
                 else {
-                    count++;
+                    mistakeCount++;
                 }
                        
             }
